@@ -1,0 +1,25 @@
+/*body { 
+  background: url(/img/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+.well {
+	padding: 60px 0 60px 0;
+	margin: 30px;
+	text-align: center;
+	font-size: 4.5em;
+	color: white;
+	background-color: black;
+	opacity: 0.7;
+	font-family: 'Avenir Next';
+}
+
+.centered {
+  position: fixed; /* or absolute */
+  top: 10%;
+  left: 15%;
+
+}

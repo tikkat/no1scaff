@@ -1,0 +1,46 @@
+	<h1>Welcome you! {{currentUser.email}}</h1>
+
+	<a ng-if="currentUser.isAdmin" href="/adminPage">Go to the admin page</a>
+
+	<h1>Currently there are {{users.length}} users registered</h1>
+	<ul>
+		<li ng-repeat="user in users">
+			{{user.email}}
+			<span ng-if="user.isAdmin">This user is Admin</span>
+		</li>
+	</ul>
+
+
+	<div ng-if="currentUser.isAdmin">
+
+				<p>Skapa ny användare</p>
+				<form action="/api/createUser" method="post">
+					<div class="form-group">
+						<label>Email</label>
+						<input type="text" class="form-control" name="email">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" class="form-control" name="password">
+					</div>
+					<div class="form-group">
+						<label>Förnamn</label>
+						<input type="text" class="form-control" name="firstName">
+					</div>
+					<div class="form-group">
+						<label>Efternamn</label>
+						<input type="text" class="form-control" name="lastName">
+					</div>
+					<div class="form-group">
+			<label>Admin?</label>
+			<input type="checkbox" class="form-control" name="isAdmin">
+		</div>
+
+			<button type="submit" class="btn btn-warning btn-lg">Skapa!</button>
+		</form>
+	</div>
+
+
+<form action="/logout" method="get">
+	<input type="submit" value="Logout" />
+</form>
