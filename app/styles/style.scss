@@ -1,10 +1,10 @@
-/*body { 
+body { 
   background: url(/img/background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}*/
+}
 
 /* ----------- MIXINS ----------- */
 
@@ -15,17 +15,52 @@
           border-radius: $radius;
 }
 
+@mixin transition($time) {
+	-webkit-transition:all $time linear;
+  	   -moz-transition:all $time linear;
+      	    transition:all $time linear;
+}
 
+@mixin transform($size) {
+	-webkit-transform: scale($size);
+  	   -moz-transform: scale($size);
+  	        transform: scale($size);
+}
+
+
+
+/* ----------- STYLES ----------- */
 
 .box { 
+	border-style: none;
 	@include border-radius(10px); 
 	padding: 60px 0 60px 0;
 	margin: 30px;
 	text-align: center;
 	font-weight: bold;
 	font-size: 4.5em;
-	color: white;
-	background-color: black;
-	opacity: 0.7;
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 0, 0, 0.7);
 	font-family: 'Avenir Next';
+}
+
+.locked {
+	opacity: 0.3;
+}
+
+footer {
+	padding: 15px 0 15px 0;
+	color: white;
+
+}
+
+/* ----------- ANIMATIONS ----------- */
+
+.expand {
+	@include transition(0.5s);
+  	-webkit-backface-visibility: hidden;
+}
+
+.expand:hover {
+	@include transform(1.1);
 }

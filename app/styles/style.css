@@ -1,12 +1,14 @@
-/*body { 
-  background: url(/img/background.jpg) no-repeat center center fixed; 
+body {
+  background: url(/img/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-}*/
+  background-size: cover; }
+
 /* ----------- MIXINS ----------- */
+/* ----------- STYLES ----------- */
 .box {
+  border-style: none;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -17,8 +19,26 @@
   font-weight: bold;
   font-size: 4.5em;
   color: white;
-  background-color: black;
-  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.7);
   font-family: 'Avenir Next'; }
+
+.locked {
+  opacity: 0.3; }
+
+footer {
+  padding: 15px 0 15px 0;
+  color: white; }
+
+/* ----------- ANIMATIONS ----------- */
+.expand {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  -webkit-backface-visibility: hidden; }
+
+.expand:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1); }
 
 /*# sourceMappingURL=style.css.map */
